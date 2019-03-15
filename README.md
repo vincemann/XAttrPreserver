@@ -30,3 +30,9 @@ WARNING:
   Create a backup of your .bashrc file before using! (cat ~/.bashrc > ~/.bashrc.bak).
   This is bad python and only tested with python3.5 on Ubuntu 16.04.
   If something goes wrong just restore you .bashrc or delete the entries in it yourself.
+  
+  
+ REQUIREMENTS:
+  Python3.5,
+  
+  clitools: getfattr, setfattr
