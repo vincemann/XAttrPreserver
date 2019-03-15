@@ -35,4 +35,4 @@ WARNING:
  REQUIREMENTS:
  
   Python3.5, 
-  clitools: getfattr, setfattr
+  clitools: getfattr, setfattr (install with: 'sudo apt install attr')
