@@ -35,7 +35,7 @@ class Shell:
 
 
 def isCommandInBashRc(commandName, bashRcPath):
-    result = Shell.execute("cat \""+bashRcPath+"\" | grep -i 'alias' | grep -i \"" + commandName+"\"")
+    result = Shell.execute("cat \""+bashRcPath+"\" | grep -i 'alias' | grep -i \"" + commandName+"\" || true")
     if not result:
         return False
     else:
