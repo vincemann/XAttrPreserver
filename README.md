@@ -13,6 +13,7 @@ USAGE:
 EXAMPLE:
 
   python3.5 makePreserveAttr.py /usr/bin/vi
+  
   #now 'vi testFile.txt'  wont remove the extended File Attributes of testFile.txt anymore
 
 
