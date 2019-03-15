@@ -1,0 +1,35 @@
+#preserve xattr for <COMMAND_NAME>
+alias <COMMAND_NAME>='<FUNCTION_NAME>'
+function <FUNCTION_NAME> ()
+{
+	#find files in attribute list
+	for arg in "$@"
+	do
+		filesToPreserve=()
+    		if [ -f "$arg" ];
+		then
+			#printf "argument: %s seems to be a file -> preserving attributes\n" "$arg"
+			filesToPreserve+=("$arg")
+		fi
+	done
+
+	#save xattr
+	tempPathes=()
+	for file in "${filesToPreserve[@]}"
+	do
+		fileName=$(basename "$file")
+		tempPath="/tmp/$fileName.attr"
+		getfattr -d "$file" > "$tempPath"
+		tempPathes+=("$tempPath")
+	done
+	
+	#run actual command
+	<COMMAND_PATH> "$@"
+	
+	#restore xattr
+	for p in "${tempPathes[@]}"
+	do
+		setfattr --restore="$p"
+	done
+}
+
