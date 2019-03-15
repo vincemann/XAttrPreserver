@@ -6,6 +6,7 @@ simple python script for making a specific command-line program preserve xAttr (
 USAGE:
 
   python3.5 makePreserveAttr.py <absolute/Path/To/Program>
+  
   #the specified program must be in your PATH
   #restart your terminal so the changes take place
 
