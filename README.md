@@ -33,6 +33,6 @@ WARNING:
   
   
  REQUIREMENTS:
-  Python3.5,
-  
+ 
+  Python3.5, 
   clitools: getfattr, setfattr
